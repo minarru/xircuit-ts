@@ -1,0 +1,36 @@
+@import "./variables";
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+html, body {
+    height: 100%;
+    user-select: none;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    
+    p {
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+}
+
+body {
+    margin: 0;
+}

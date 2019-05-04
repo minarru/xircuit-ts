@@ -1,0 +1,159 @@
+@import "./common";
+
+// Ignore IDE error 'cannot resolve directory, it still works.'
+@import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/elevation/mdc-elevation";
+@import "@material/drawer/mdc-drawer";
+@import "@material/list/mdc-list";
+@import "@material/icon-button/mdc-icon-button";
+
+
+.xircuit-appbar {
+    color: $mdc-theme-on-primary;
+
+    .xircuit-appbar__logo {
+        width: 38px;
+        padding-left: 12px;
+    }
+
+    .xircuit-appbar__title {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1.5rem;
+    }
+}
+
+.xircuit-page {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+}
+
+.xircuit-toolset {
+    z-index: 2;
+
+    .xircuit-toolset__content {
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        background-color: $mdc-theme-toolset-background;
+        box-shadow: 3px 0 6px rgba(0, 0, 0, 0.07);
+
+        .xircuit-toolset__section {
+            display: flex;
+            width: 100%;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            align-content: space-evenly;
+            justify-content: space-evenly;
+
+            .xircuit-toolset__header {
+                display: flex;
+                width: 85%;
+                height: 40px;
+                box-sizing: border-box;
+                padding: 0 15px;
+                align-content: center;
+                justify-content: space-between;
+                border-radius: 4px;
+                background-color: white;
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.09);
+
+                .xircuit-toolset__title {
+                    line-height: 40px;
+                    color: $mdc-theme-primary-light;
+                    font-weight: 600;
+                }
+
+                // MS Edge hax
+                _:-ms-lang(x), .xircuit-toolset__title { margin: 0; }
+
+                .xircuit-toolset__collapse-expand {
+                    width: 35px;
+                    height: 35px;
+                    padding: 0;
+                    align-self: center;
+                    @include mdc-icon-button-ink-color($mdc-theme-primary-light);
+                }
+            }
+
+            .xircuit-toolset__tool-container {
+                display: inline-flex;
+                width: 100%;
+                opacity: 1;
+                overflow: hidden;
+                transition: height .3s ease-in-out;
+                justify-content: space-evenly;
+
+                &.fading-in {
+                    animation: fadeIn .25s ease-in-out;
+                }
+
+                &.fading-out {
+                    animation: fadeOut .25s ease-in-out;
+                }
+
+                .xircuit-toolset__tool {
+                    display: flex;
+                    width: 38px;
+                    height: 38px;
+                    margin: 25px 0;
+                    border: 2px solid white;
+                    justify-content: center;
+                    border-radius: 6px;
+                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+                    background-color: white;
+                    cursor: pointer;
+                    transition: border-color .25s ease-in;
+
+                    &.active {
+                        border-color: $mdc-theme-toolset-blue;
+                    }
+                }
+            }
+            // MS Edge hax
+            _:-ms-lang(x), .xircuit-toolset__tool-container { justify-content: space-around; padding: 0 15px; }
+        }
+        // MS Edge hax
+        _:-ms-lang(x), .xircuit-toolset__section { justify-content: space-around; align-content: space-around; }
+    }
+}
+
+.xircuit-svg-canvas {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: $mdc-theme-canvas-background;
+    box-sizing: border-box;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    #drawing {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+
+        svg {
+            align-self: center;
+            border: 2px solid $mdc-theme-canvas-grid;
+            background-color: white;
+            box-shadow: 0px 6px 10px #E0E0E0;
+            cursor: crosshair;
+
+            .grid {
+                .gridLine {
+                    stroke: $mdc-theme-canvas-grid-light;
+                }
+
+                .horizontal .gridLine:nth-child(4n +4) {
+                    stroke: $mdc-theme-canvas-grid;
+                }
+
+                .vertical .gridLine:nth-child(4n +4) {
+                    stroke: $mdc-theme-canvas-grid;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <title>Xircuit</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="src/scss/app.scss" rel="stylesheet">
+</head>
+<body>
+<header class="xircuit-appbar mdc-top-app-bar mdc-elevation--z4">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <img class="xircuit-appbar__logo" src="img/logo.svg" width="38" alt="Xircuit logo">
+            <span class="xircuit-appbar__title mdc-top-app-bar__title">Xircuit</span>
+        </section>
+    </div>
+</header>
+
+<main class="xircuit-page">
+    <aside class="xircuit-toolset mdc-drawer mdc-top-app-bar--fixed-adjust">
+        <div class="xircuit-toolset__content mdc-drawer__content">
+            <div class="xircuit-toolset__section">
+                <div class="xircuit-toolset__header">
+                    <p class="xircuit-toolset__title">Vodiče</p>
+                    <button id="collapse-expand__conductors" class="xircuit-toolset__collapse-expand mdc-icon-button material-icons">
+                        <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">expand_more</i>
+                        <i class="material-icons mdc-icon-button__icon">expand_less</i>
+                    </button>
+                </div>
+
+                <div id="conductors-container" class="xircuit-toolset__tool-container">
+                    <div id="Conductor" class="xircuit-toolset__tool">
+                        <svg width="38" height="38" xmlns="http://www.w3.org/2000/svg" style="align-self: center;">
+                            <line y1="30" x1="8" y2="8" x2="30" stroke-width="1.5" stroke="#666" fill="none"></line>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="xircuit-toolset__section">
+                <div class="xircuit-toolset__header">
+                    <p class="xircuit-toolset__title">Zdroje</p>
+                    <button id="collapse-expand__supplies" class="xircuit-toolset__collapse-expand mdc-icon-button material-icons">
+                        <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">expand_more</i>
+                        <i class="material-icons mdc-icon-button__icon">expand_less</i>
+                    </button>
+                </div>
+
+                <div id="supplies-container" class="xircuit-toolset__tool-container">
+                    <div id="Supply" class="xircuit-toolset__tool">
+                        <svg width="38" height="38" xmlns="http://www.w3.org/2000/svg" style="align-self: center;">
+                            <line stroke-width="1.5" stroke="#666" y2="22.095839" x2="15.904161" y1="30" x1="8"/>
+                            <line stroke-width="1.5" stroke="#666" y2="27.080882" x2="29.776104" y1="7.597116" x1="9.850896"/>
+                            <line stroke-width="1.5" stroke="#666" y2="28.928537" x2="23.064524" y1="15.229864" x1="9.365851"/>
+                            <line stroke-width="1.5" stroke="#666" y2="8" x2="30" y1="17.583761" x1="20.416239"/>
+                        </svg>
+                    </div>
+                    <div id="Battery" class="xircuit-toolset__tool">
+                        <svg width="38" height="38" xmlns="http://www.w3.org/2000/svg" style="align-self: center;">
+                            <line stroke-width="1.5" stroke="#666" y2="22.981916" x2="15.018084" y1="30" x1="8"/>
+                            <line stroke-width="1.5" stroke="#666" y2="25.37202" x2="31.864714" y1="5.888254" x1="11.939505"/>
+                            <line stroke-width="1.5" stroke="#666" y2="30.118859" x2="27.307748" y1="10.635093" x1="7.38254"/>
+                            <line stroke-width="1.5" stroke="#666" y2="29.624741" x2="22.178448" y1="15.926067" x1="8.479774"/>
+                            <line stroke-width="1.5" stroke="#666" y2="25.067775" x2="26.735413" y1="11.369101" x1="13.03674"/>
+                            <line stroke-width="1.5" stroke="#666" y2="7.936709" x2="30" y1="15.685025" x1="22.251684"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="xircuit-toolset__section">
+                <div class="xircuit-toolset__header">
+                    <p class="xircuit-toolset__title">Přepínače</p>
+                    <button id="collapse-expand__switches" class="xircuit-toolset__collapse-expand mdc-icon-button material-icons">
+                        <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">expand_more</i>
+                        <i class="material-icons mdc-icon-button__icon">expand_less</i>
+                    </button>
+                </div>
+
+                <div id="switches-container" class="xircuit-toolset__tool-container">
+                    <div id="Switch" class="xircuit-toolset__tool">
+                        <svg width="38" height="38" xmlns="http://www.w3.org/2000/svg" style="align-self: center;">
+                            <line stroke="#666666" y2="26.278146" x2="11.721854" y1="30" x1="8" stroke-width="1.5" fill="none"/>
+                            <line stroke="#666666" y2="8" x2="30" y1="10.993377" x1="27.006623" stroke-width="1.5" fill="none"/>
+                            <ellipse ry="3.443709" rx="3.443709" cy="23.664736" cx="14.331128" stroke-width="1.5" stroke="#666666" fill="none"/>
+                            <ellipse ry="3.443709" rx="3.443709" cy="13.797186" cx="24.132453" stroke-width="1.5" stroke="#666666" fill="none"/>
+                            <line stroke="#666666" y2="8.432948" x2="18.768214" y1="21.942882" x1="11.350995"stroke-width="1.5" fill="none"/>
+                        </svg>
+                    </div>
+                    <div id="Double_switch" class="xircuit-toolset__tool">
+                        <svg width="38" height="38" xmlns="http://www.w3.org/2000/svg" style="align-self: center;">
+                            <line stroke="#666666" y2="26.278146" x2="11.721854" y1="30" x1="8" stroke-width="1.5" fill="none"/>
+                            <line stroke="#666666" y2="13.761589" x2="30" y1="16.754966" x1="27.006623" stroke-width="1.5" fill="none"/>
+                            <ellipse ry="3.443709" rx="3.443709" cy="23.664736" cx="14.331128" stroke="#666666"stroke-width="1.5" fill="none"/>
+                            <ellipse ry="3.443709" rx="3.443709" cy="19.558776" cx="24.132453" stroke="#666666"stroke-width="1.5" fill="none"/>
+                            <line stroke="#666666" y2="8" x2="22.649007" y1="10.993377" x1="19.65563" stroke-width="1.5" fill="none"/>
+                            <ellipse ry="3.443709" rx="3.443709" cy="13.797186" cx="16.781459" stroke="#666666" stroke-width="1.5" fill="none"/>
+                            <line stroke="#666666" y2="22.472683" x2="11.086093" y1="12.141557" x1="13.7351" stroke-width="1.5" fill="none"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="xircuit-toolset__section">
+                <div class="xircuit-toolset__header">
+                    <p class="xircuit-toolset__title">Žárovky</p>
+                    <button id="collapse-expand__bulbs" class="xircuit-toolset__collapse-expand mdc-icon-button material-icons">
+                        <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">expand_more</i>
+                        <i class="material-icons mdc-icon-button__icon">expand_less</i>
+                    </button>
+                </div>
+
+                <div id="bulbs-container" class="xircuit-toolset__tool-container">
+                    <div id="Bulb" class="xircuit-toolset__tool">
+                        <svg width="38" height="38" xmlns="http://www.w3.org/2000/svg" style="align-self: center;">
+                            <line y2="8" x2="30" y1="30" x1="8" stroke-width="1.5" stroke="#666666" fill="none"/>
+                            <ellipse stroke="#666666" ry="8" rx="8" cy="19" cx="19" stroke-width="1.5" fill="#ffffff"/>
+                            <line y2="22" x2="16" y1="16" x1="22" stroke-width="1.5" stroke="#666666" fill="none"/>
+                            <line y2="22" x2="22" y1="16" x1="16" stroke-width="1.5" stroke="#666666" fill="none"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <section class="xircuit-svg-canvas mdc-top-app-bar--fixed-adjust">
+        <div id="drawing"></div>
+    </section>
+</main>
+
+<script src="./src/ts/app.ts" async></script>
+</body>
+</html>

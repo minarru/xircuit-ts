@@ -1,0 +1,25 @@
+{
+  "name": "xircuit-ts",
+  "version": "1.0.0",
+  "description": "Xircuit rewrite using modern web technologies.",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "author": "Rudolf Minařík",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.19.0",
+    "typescript": "^3.4.5"
+  },
+  "dependencies": {
+    "@material/button": "^2.0.0",
+    "@material/drawer": "^2.0.0",
+    "@material/elevation": "^1.1.0",
+    "@material/icon-button": "^2.0.0",
+    "@material/list": "^2.0.0",
+    "@material/theme": "^1.1.0",
+    "@material/top-app-bar": "^2.0.0",
+    "@svgdotjs/svg.js": "^3.0.12"
+  }
+}
